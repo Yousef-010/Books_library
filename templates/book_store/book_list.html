@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+    {% block content %}
+{% for item in object_list %}
+<div class="row">
+    <div class="card">
+        <img src="{{ item.image.url }}" class="card-img-top img-fluid" alt="{{ item.title }}">
+        <div class="card-body">
+            <h1 class="card-title">Title: {{ item.title }}</h1>
+            <h5 class="card-title">Category: {{ item.category }} by <span class="text-primary">{{ item.author }}</span></h5>
+            <p class="card-text">Description: {{ item.description }}</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
