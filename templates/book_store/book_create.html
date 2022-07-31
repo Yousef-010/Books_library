@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2>Create New Book, Please Fill The Information Below</h2>
+
+
+
+<form method="post" class="uniForm">
+  {% csrf_token %}
+  {{ form|crispy }}
+<label>Choose image</label>
+<input type="file" name="upload">
+<br>
+<br>
+<input type="submit" value="SAVE" class="btn btn-success">
+
+</form>
+
+
+{% endblock content %}

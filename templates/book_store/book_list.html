@@ -1,16 +1,22 @@
 {% extends '_base.html' %}
+{% load static %}
 
-    {% block content %}
-{% for item in object_list %}
+{% block content %}
+
+<a href="{% url 'book_create' %}"><button type="button" class="btn btn-primary btn-block" > Add New Book</button> </a>
+
 <div class="row">
-    <div class="card">
-        <img src="{{ item.image.url }}" class="card-img-top img-fluid" alt="{{ item.title }}">
-        <div class="card-body">
+{% for item in object_list %}
+
+    <div class="card" style="margin:30px">
+        <img src="{{item.image.url}}" class="card-img-top img-fluid" alt="{{ item.title }}">
+        <div class="card-body" >
             <h1 class="card-title">Title: {{ item.title }}</h1>
-            <h5 class="card-title">Category: {{ item.category }} by <span class="text-primary">{{ item.author }}</span></h5>
-            <p class="card-text">Description: {{ item.description }}</p>
+            <a href="{% url 'book_detail' item.pk %}"><button  class="btn btn-info btn-block" >  See More Details </button></a>
+
         </div>
     </div>
-</div>
+
 {% endfor %}
+</div>
 {% endblock content %}

@@ -16,7 +16,7 @@ class Book(models.Model):
     description = models.TextField()
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.FileField(upload_to='Book_images', blank=True)
+    image = models.FileField(upload_to='static/images/', blank=True, default='static/images/bg.jpg')
 
     def __str__(self):
         return self.title
