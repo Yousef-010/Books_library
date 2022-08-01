@@ -3,6 +3,8 @@
 
 > Run server `python manage.py runserver` 
 
+> Navigate to `http://127.0.0.1:8000/book_store/` (my home page )
+
 > username: `admin`
 > password: `admin`
 
